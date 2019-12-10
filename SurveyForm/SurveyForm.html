@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>SurveyForm - Lyuba Ivanova</title>
+        <link rel="stylesheet" href="SurveyForm.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Corben|Oregano|Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <header class="header">
+                <h1 id="title" class="title"><span class="company-logo">SunnyAvocado</span> survey form</h1>
+                <p id="description" class="description">Thank you for taking the time to help us improve our services
+                </p>
+            </header>
+
+            <form id="survey-form">
+
+                <div class="survey-elements">
+                    <label id="name-label" for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-field" placeholder="Enter your name" required>
+                </div>
+
+                <div class="survey-elements">
+                    <label id="email-label" for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-field" placeholder="Enter your email"
+                        required>
+                </div>
+
+                <div class="survey-elements">
+                    <label id="number-label" for="name">Age</label>
+                    <input type="number" name="age" id="number" min="10" max="105" class="form-field"
+                        placeholder="Enter your age" required>
+                </div>
+
+                <div class="survey-elements">
+                    <p>Which option suits you best?</p>
+                    <select id="dropdown" name="best-option" class="form-field dropdown">
+                        <option value="chef">Chef</option>
+                        <option value="shop-owner">Shop owner</option>
+                        <option value="customer">Customer</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="survey-elements">
+
+                    <p>Would you recommend <span class="company-logo">SunnyAvocado</span> to your friends, family, or business partners?</p>
+                   
+                    <label class="radio-buttons"><span class="diff-font">Absolutely</span>
+                        <input name="radio" value="absolutely" type="radio" class="input-radio" checked>
+                        <span class="checkmark-radio"></span>
+                    </label>
+
+                    <label class="radio-buttons"><span class="diff-font">Maybe</span>
+                        <input name="radio" value="maybe" type="radio" class="input-radio">
+                        <span class="checkmark-radio"></span>
+                    </label>
+
+                    <label class="radio-buttons"><span class="diff-font">Nope</span>
+                        <input name="radio" value="nope" type="radio" class="input-radio">
+                        <span class="checkmark-radio"></span>
+                    </label>
+                </div>
+
+                <div class="survey-elements">
+                    <p>Which types of avocado would you like to see in our assortiment?<span class="clue"> (you can check
+                            more than one option)</span></p>
+
+                    <label class="checkbox-label"><span class="diff-font">Choquette</span>
+                        <input name="avocado-types" value="choquette" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label"><span class="diff-font">Lula</span>
+                        <input name="avocado-types" value="lula" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label"><span class="diff-font">Reed</span>
+                        <input name="avocado-types" value="reed" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label"><span class="diff-font">Sharwil</span>
+                        <input name="avocado-types" value="Sharwil" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label"><span class="diff-font">Fuerte</span>
+                        <input name="avocado-types" value="fuerte" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-label"><span class="diff-font">Cleopatra</span>
+                        <input name="avocado-types" value="cleopatra" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <div class="survey-elements">
+                    <p>Do you have any suggestions?</p>
+                    <textarea class="textarea" placeholder="Your comment here..."></textarea>
+                </div>
+
+                <div class="survey-elements">
+                    <button type="submit" id="submit" class="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>
