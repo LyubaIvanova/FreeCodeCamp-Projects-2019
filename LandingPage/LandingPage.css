@@ -1,0 +1,584 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif, 'Sahitya', serif;
+    background-color: rgb(250, 247, 246);
+}
+
+main {
+    position: relative;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header and nav-bar */
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    background-color: rgb(252, 219, 206);
+    width: 100%;
+    min-height: 75px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    width: 35vw;
+}
+
+.logo>img {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 2rem;
+}
+
+.nav-ul {
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-ul li:hover {
+    background-color: coral;
+    transition: 1s;
+}
+
+.nav-ul>li {
+    font-size: 1.2rem;
+    padding: 1.3rem;
+}
+
+.nav-link {
+    color: rgb(49, 5, 5);
+}
+
+/* phones query */
+@media (max-width: 480px) {
+    header {
+        display: flex;
+        width: 100vw;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .logo {
+        width: 15rem;
+        position: relative;
+    }
+
+    .logo>img {
+        margin: 0 auto;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav-ul>li {
+        padding: .2rem;
+    }
+
+    .nav-ul {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+}
+/* talblets query*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        width: 100vw;
+    }
+    .logo {
+        width: 8rem;
+        position: relative;
+    }
+
+    .logo>img {
+        margin: 0 auto;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav-ul>li {
+        padding: .2rem;
+    }
+}
+
+/* video, subscription form, and heading above*/
+.hero-text {
+    margin: 3rem auto 5rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.hero-heading {
+    margin: 8rem auto 1rem;
+    text-align: center;
+    font-size: 2.8rem;
+}
+
+.watch-video {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10rem;
+}
+
+.center-video {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 75.2rem;
+}
+
+.video-container {
+    width: 50rem;
+    height: 30rem;
+}
+
+.video-container>iframe {
+    width: 100%;
+    height: 100%;
+    border-bottom: .5px solid rgb(109, 117, 108);
+}
+
+.subscription-form {
+    width: 25rem;
+    height: 30rem;
+    border: .5px solid rgb(109, 117, 108);
+    background-color: rgb(216, 240, 216);
+}
+
+.form-p {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+}
+
+.form-elements {
+    margin: 2rem .5rem;
+    font-size: 1rem;
+}
+
+.form-elements>input,
+.form-field-dropdown {
+    margin: .3rem auto;
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: .25rem;
+    border: .5px solid rgb(109, 117, 108);
+}
+
+#submit {
+    height: 2.5rem;
+    width: 15rem;
+    background-color: chocolate;
+    border-radius: .25rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+#submit:hover {
+    background-color: rgb(233, 73, 24);
+}
+
+/* phones query */
+@media (max-width: 480px) {
+    .hero-heading {
+        margin: 13rem auto .8rem;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .hero-text {
+        margin: .8rem auto .5rem;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .watch-video {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        margin-bottom: 3rem;
+    }
+
+    .center-video {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .video-container {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .subscription-form {
+        width: 100vw;
+        height: 520px;
+    }
+}
+/* talblets query*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero-heading {
+        font-size: 2rem;
+    }
+    .center-video {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .video-container {
+        width: 95vw;
+    }
+    .subscription-form {
+        margin-top: 2rem;
+    }
+}
+
+/* assortiment */
+.categories {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.assortiment {
+    margin: 5rem 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    max-width: 30rem;
+}
+
+.assortiment>img {
+    width: 30rem;
+    height: 27rem;
+    border-radius: 5px 5px 0 0;
+}
+
+.assortiment:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.assortiment-text {
+    padding: 2px 16px;
+    margin: 1.1rem auto;
+    text-align: center;
+}
+
+.assortiment-text>h4 {
+    text-transform: uppercase;
+}
+
+.assortiment-text>p {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(88, 87, 87);
+    text-align: justify;
+    margin-top: 1.1rem;
+}
+
+/* phones query */
+@media (max-width: 480px) {
+    .categories {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        flex-wrap: wrap;
+    }
+
+    .assortiment {
+        margin: 1rem auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        width: 90vw;
+    }
+
+    .assortiment>img {
+        width: 90vw;
+        height: 50vh;
+        border-radius: 5px 5px 0 0;
+    }
+}
+/* talblets query*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .assortiment {
+        margin: 2rem auto;
+    }
+}
+
+/* testimonials */
+.why-brighten {
+    margin: 2rem 5rem 5rem;
+}
+
+.why-brighten>p {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+hr {
+    margin: 2rem auto;
+    width: 70%;
+}
+
+.section-headings {
+    text-align: center;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 0px;
+    justify-items: center;
+    margin-top: 7rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". .";
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+    width: 35rem;
+    height: auto;
+    line-height: 2rem;
+}
+
+.testimonials-img {
+    margin-right: 30px;
+    width: 150px;
+    height: 150px;
+}
+
+.testimonials-img>img {
+    margin-top: .8rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 34% 66% 52% 53% / 34% 34% 68% 71%;
+}
+
+.testimonials-text .user-name {
+    font-size: 20px;
+    margin-right: 15px;
+    font-weight: bold;
+    color: rgb(124, 8, 31);
+}
+
+.testimonials-text .user-occupation {
+    font-weight: bold;
+    color: rgb(88, 87, 87);
+    font-size: 15px;
+}
+
+.testimonials-text .user-comment {
+    font-style: italic;
+    font-size: 18px;
+}
+
+/* phones query */
+@media (max-width: 480px) {
+    .why-brighten {
+        margin: 2rem auto;
+    }
+    .why-brighten>p {
+        font-size: 1.2rem;
+        text-align: justify;
+    }
+    hr {
+        margin: 2rem auto 1rem;
+        width: 90%;
+    }
+    .testimonials {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem auto;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #ccc;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 16px;
+        margin: 16px 0;
+        width: 100vw;
+        height: auto;
+        line-height: 2rem;
+    }
+
+    .testimonials-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .testimonials-img>img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .testimonials-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/* talblets query*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .testimonials {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* image at the bottom */
+.big-image {
+    margin: 8rem 0 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 0;
+}
+
+.mobile-bottom {
+    display: none;
+}
+
+.desktop-bottom {
+    display: flex;
+}
+
+.big-image>p {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+}
+
+/* phones query */
+@media (max-width: 480px) {
+    .desktop-bottom {
+        display: none;
+    }
+
+    .mobile-bottom {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .big-image {
+        margin: 2rem 0 0;
+        text-align: center;
+        width: 100vw;
+    }
+
+    .big-image>p {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 2.5rem;
+        margin: 5rem auto 0;
+        position: relative;
+        z-index: 0;
+    }
+}
+
+/* footer */
+footer {
+    margin-top: -.1rem;
+    background-color: rgb(252, 219, 206);
+    padding: 1rem;
+}
+
+footer>ul {
+    display: flex;
+    justify-content: center;
+}
+
+footer>ul>li {
+    padding: 0 2rem;
+}
+
+/* phones query */
+@media (max-width: 480px) {
+    footer > ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: ". ."". .";
+        margin-top: -.1rem;
+        padding: .1rem;
+        width: 100vw;
+    }
+}
