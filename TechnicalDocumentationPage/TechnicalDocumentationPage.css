@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: rgb(252, 250, 232);
+    line-height: 2rem;
+}
+a {
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+}
+li {
+    list-style: none;
+}
+header {
+    font-size: 1.5rem;
+}
+img {
+    margin: 0 2px -6px 0;
+}
+code {
+    font-size: 1.4rem;
+}
+.inline-code {
+    background-color: rgba(193, 198, 206, 0.788);
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 0 3px;
+    font-size: 1rem;
+}
+pre {
+    display: block;
+    text-align: left;
+    white-space: pre;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    padding: 1rem auto -1rem -5rem;
+    margin: 1.2rem;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+nav {
+    width: 18rem;
+    background-color: rgb(126, 182, 247);
+    height: 100%;
+    padding: 2rem;
+    position: fixed;
+    border-right: 0.1px solid rgb(44, 44, 44);
+}
+nav > header {
+    text-align: center;
+}
+nav > ul li {
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    border-bottom: 0.5px solid rgb(44, 44, 44);
+    border-radius: 2px;
+}
+nav > ul li:hover {
+    background-color: rgb(14, 73, 150);
+}
+main {
+    padding: 1rem 5rem 2rem;
+    position: absolute;
+    margin-left: 18rem;
+}
+.main-section {
+    margin: 3rem auto;
+}
+.main-section > header {
+    margin: 1.5rem auto 1.5rem 2rem;
+}
+
+.source-link  {
+    text-decoration: underline;
+    font-weight: bold;
+}
+@media (max-width: 480px) {
+    html {
+        width: 100vw;
+    }
+    nav > ul li {
+        font-size: 1rem;
+    }
+    nav {
+        position: absolute;
+        top: 0;
+        padding: 1rem;
+        margin: 0;
+        width: 100vw;
+        height: 214px;
+        overflow-y: scroll;
+        font-size: 1rem;
+    }
+    main {
+        position: relative;
+        margin: 215px auto auto;
+        text-align: justify;
+        padding: 0.05rem 1rem;
+    }
+    .main-section > header {
+        margin: 1.5rem 1rem;
+        text-align: center;
+    }
+    pre {
+        width: 100%;
+        min-width: 600px;
+        margin-left: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    html {
+        width: 100vw;
+    }
+    nav {
+        position: absolute;
+        top: 0;
+        padding: 1rem;
+        margin: 0;
+        width: 100%;
+        height: 214px;
+        overflow-y: scroll;
+        font-size: 1rem;
+        text-align: center;
+    }
+    main {
+        position: relative;
+        margin: 215px auto auto;
+        text-align: justify;
+        padding: 0.05rem 1rem;
+    }
+    pre {
+        width: 100vw;
+    }
+}

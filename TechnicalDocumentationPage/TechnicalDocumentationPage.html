@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Technical Documentation Page</title>
+        <link href="TechnicalDocumentationPage.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav id="navbar">
+            <header><img src="https://img.icons8.com/color/48/000000/python.png" width="30" height="30" alt="small python logo">Python Documentation</header>
+            <ul>
+                <li>
+                    <a class="nav-link" href="#Overview">Overview</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Informal_introduction_to_Python">Informal introduction to Python</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#More_control_flow_tools">More control flow tools</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Data_structures">Data structures</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Modules">Modules</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Errors_and_exceptions">Errors and exceptions</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Classes">Classes</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Reference">Reference</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-doc">
+            <section class="main-section" id="Overview">
+                <header>Overview</header>
+                <article>
+                    <p>
+                        Python is an easy to learn, powerful programming language. It has efficient high-level data
+                        structures and a simple but effective approach to object-oriented programming. Python’s elegant
+                        syntax and dynamic typing, together with its interpreted nature, make it an ideal language for
+                        scripting and rapid application development in many areas on most platforms.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Informal_introduction_to_Python">
+                <header>Informal introduction to Python</header>
+                <article>
+                    <p>
+                        Many of the examples in this manual, even those entered at the interactive prompt, include
+                        comments. Comments in Python start with the hash character, #, and extend to the end of the
+                        physical line. A comment may appear at the start of a line or following whitespace or code, but
+                        not within a string literal. A hash character within a string literal is just a hash character.
+                    </p>
+                    <p>
+                        Some examples:
+                    </p>
+<pre>
+    # this is the first comment
+    spam = 1   # and this is the second comment
+               # ... and now a third!
+    text = "# This is not a comment because it's inside quotes."</pre>
+                    <ul>
+                        <li>
+                            <h4>Numbers</h4>
+                            <p>
+                                The integer numbers (e.g. 2, 4, 20) have type int, the ones with a fractional part (e.g.
+                                5.0, 1.6) have type float. Division (/) always returns a float. To do floor division and
+                                get an integer result (discarding any fractional result) you can use the // operator; to
+                                calculate the remainder you can use %.
+                                With Python, it is possible to use the ** operator to calculate powers. If a variable is
+                                not “defined” (assigned a value), trying to use it will give you an error:
+
+                            </p>
+<pre>
+    >>> n   # try to access an undefined variable
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+    NameError: name 'n' is not defined</pre>
+                        </li>
+                        <li>
+                            <h4>Strings</h4>
+                            <p>Besides numbers, Python can also manipulate strings, which can be expressed in several
+                                ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the
+                                same result. \ can be used to escape quotes:</p>
+<pre>
+    >>> 'spam eggs'  # single quotes
+    'spam eggs'
+    >>> 'doesn\'t'  # use \' to escape the single quote...
+    "doesn't"
+    >>> "doesn't"  # ...or use double quotes instead
+    "doesn't"
+    >>> '"Yes," they said.'
+    '"Yes," they said.'
+    >>> "\"Yes,\" they said."
+    '"Yes," they said.'
+    >>> '"Isn\'t," they said.'
+    '"Isn\'t," they said.'</pre>
+                        </li>
+                        <li>
+                            <h4>Lists</h4>
+                            <p>Python knows a number of compound data types, used to group together other values. The
+                                most versatile is the list, which can be written as a list of comma-separated values
+                                (items) between square brackets. Lists might contain items of different types, but
+                                usually the items all have the same type.</p>
+<pre>
+    >>> squares = [1, 4, 9, 16, 25]
+    >>> squares
+    [1, 4, 9, 16, 25]</pre>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="More_control_flow_tools">
+                <header>More control flow tools</header>
+                <article>
+                <p>
+                    Python uses the usual flow control statements known from other languages, with some twists.
+                </p>
+                <ul>
+                    <li>
+                        <h4><code>if</code> Statements</h4>
+<pre>
+    >>> x = int(input("Please enter an integer: "))
+    Please enter an integer: 42
+    >>> if x < 0:
+    ...     x = 0
+    ...     print('Negative changed to zero')
+    ... elif x == 0:
+    ...     print('Zero')
+    ... elif x == 1:
+    ...     print('Single')
+    ... else: 
+    ...     print('More')
+    ... 
+    More </pre> 
+                    </li>
+                    <li>
+                        <h4><code>for</code> Statements</h4>
+<pre>
+    # Strategy:   Iterate over a copy
+    for user, status in users.copy().items():
+        if status == 'inactive':
+            del users[user]
+
+    # Strategy:   Create a new collection
+    active_users = {}
+    for user, status in users.items():
+        if status == 'active':
+    active_users[user] = status</pre>
+                    </li>
+                    <li>
+                        <h4><code>break</code> and <code>continue</code> Statements, and <code>else</code> Clauses on Loops</h4>
+<pre>
+    >>> for n in range(2, 10):
+    ...     for x in range(2, n):
+    ...         if n % x == 0:
+    ...             print(n, 'equals', x, '*', n//x)
+    ...             break
+    ...     else:
+    ...         # loop fell through without finding a factor
+    ...         print(n, 'is a prime number')
+    ...
+    2 is a prime number
+    3 is a prime number
+    4 equals 2 * 2
+    5 is a prime number
+    6 equals 2 * 3
+    7 is a prime number
+    8 equals 2 * 4
+    9 equals 3 * 3</pre>
+                    </li>
+                    <li>
+                        <h4>Defining Functions</h4>
+<pre>
+    >>> def fib2(n): # return Fibonacci series up to n
+    ...     """Return a list containing the Fibonacci series up to n."""
+    ...     result = []
+    ...     a, b = 0, 1
+    ...     while a < n:
+    ...         result.append(a)    # see below 
+    ...         a, b = b, a + b 
+    ...     return result 
+    ...
+    >>> f100 = fib2(100)    # call it
+    >>> f100                # write the result
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</pre>
+                    </li>
+                </ul>
+            </article>
+            </section>
+            <section class="main-section" id="Data_structures">
+                <header>Data structures</header>
+                <article>
+                <ul>
+                    <li>
+                        <h4>More on Lists</h4>
+                        <p>An example that uses most of the list methods:</p>
+<pre>
+    >>> fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+    >>> fruits.count('apple')
+    2
+    >>> fruits.count('tangerine')
+    0
+    >>> fruits.index('banana')
+    3
+    >>> fruits.index('banana', 4) # Find next banana starting a position 4
+    6
+    >>> fruits.reverse()
+    >>> fruits
+    ['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange']
+    >>> fruits.append('grape')
+    >>> fruits
+    ['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange', 'grape']
+    >>> fruits.sort()
+    >>> fruits
+    ['apple', 'apple', 'banana', 'banana', 'grape', 'kiwi', 'orange', 'pear']
+    >>> fruits.pop()
+    'pear'</pre>
+                        <p>
+                            You might have noticed that methods like <code class="inline-code">insert</code>, <code class="inline-code">remove</code> or
+                            <code class="inline-code">sort</code> that only modify the list have no return value printed – they return the
+                            default <code class="inline-code">None</code>. This is a design principle for all mutable data structures in
+                            Python.
+                            <br><br>
+                            Another thing you might notice is that not all data can be sorted or compared. For instance,
+                            <code class="inline-code">[None, 'hello', 10]</code> doesn’t sort because integers can’t be compared to strings
+                            and None can’t be compared to other types. Also, there are some types that don’t have a
+                            defined ordering relation. For example, <code class="inline-code">3+4j < 5+7j </code> isn’t a valid comparison.
+                        </p> 
+                    </li> 
+                    <li>
+                        <h4>The <code>del</code> statement</h4>
+                        <p>
+                            There is a way to remove an item from a list given its index instead of its value: the <code class="inline-code">del</code> statement. This differs from the <code class="inline-code">pop()</code> method which returns a value. The <code class="inline-code">del</code> statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice). For example:
+                        </p>
+<pre>
+    >>> a = [-1, 1, 66.25, 333, 333, 1234.5]
+    >>> del a[0]
+    >>> a
+    [1, 66.25, 333, 333, 1234.5]
+    >>> del a[2:4]
+    >>> a
+    [1, 66.25, 1234.5]
+    >>> del a[:]
+    >>> a
+    []
+</pre>
+                    </li>
+                    <li>
+                        <h4>Tuples and Sequences</h4>
+                        <p>
+                            We saw that lists and strings have many common properties, such as indexing and slicing operations. They are two examples of sequence data types (see Sequence Types — list, tuple, range). Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the tuple.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Sets</h4>
+                        <p>
+                            Python also includes a data type for sets. A set is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.
+                            <br>
+                            <br>
+                            Curly braces or the <code class="inline-code">set()</code> function can be used to create sets. Note: to create an empty set you have to use <code class="inline-code">set()</code>, not <code class="inline-code">{}</code>; the latter creates an empty dictionary, a data structure that we discuss in the next section.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Dictionaries</h4>
+                        <p>
+                            Another useful data type built into Python is the dictionary (see Mapping Types — dict). Dictionaries are sometimes found in other languages as “associative memories” or “associative arrays”. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can’t use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like <code class="inline-code">append()</code> and <code class="inline-code">extend()</code>.
+                            <br>
+                            <br>
+                            It is best to think of a dictionary as a set of key: value pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: <code class="inline-code">{}</code>. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.
+                            <br>
+                            <br>
+                            The main operations on a dictionary are storing a value with some key and extracting the value given the key. It is also possible to delete a key:value pair with <code class="inline-code">del</code>. If you store using a key that is already in use, the old value associated with that key is forgotten. It is an error to extract a value using a non-existent key.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Looping Techniques</h4>
+                        <p>
+                            When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the <code class="inline-code">items()</code> method.
+                        </p>
+<pre>
+    >>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+    >>> for k, v in knights.items():
+    ...     print(k, v)
+    ...
+    gallahad the pure
+    robin the brave</pre>
+                    </li>
+                    <li>
+                        <h4>More on Conditions</h4>
+                        <p>
+                        The conditions used in <code class="inline-code">while</code> and <code class="inline-code">if</code> statements can contain any operators, not just comparisons.
+                            <br><br>
+                        The comparison operators <code class="inline-code">in</code> and <code class="inline-code">not in</code> check whether a value occurs (does not occur) in a sequence. The operators <code class="inline-code">is</code> and <code class="inline-code">is not</code> compare whether two objects are really the same object; this only matters for mutable objects like lists. All comparison operators have the same priority, which is lower than that of all numerical operators.
+                            <br><br>
+                        Comparisons can be chained. For example, <code class="inline-code">a < b == c</code> tests whether <code class="inline-code">a</code> is less than <code class="inline-code">b</code> and moreover <code class="inline-code">b</code> equals <code class="inline-code">c</code>.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Comparing Sequences and Other Types</h4>
+                        <p>
+                            Sequence objects typically may be compared to other objects with the same sequence type. The comparison uses lexicographical ordering: first the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted.<br><br> If two items to be compared are themselves sequences of the same type, the lexicographical comparison is carried out recursively. If all items of two sequences compare equal, the sequences are considered equal. If one sequence is an initial sub-sequence of the other, the shorter sequence is the smaller (lesser) one. Lexicographical ordering for strings uses the Unicode code point number to order individual characters. 
+                        </p>
+                    </li>
+                </ul>
+            </article>
+            </section>
+            <section class="main-section" id="Modules">
+                <header>Modules</header>
+                <article>
+                <p>
+                    If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a script. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you’ve written in several programs without copying its definition into each program.
+                    <br><br>
+                    To support this, Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module; definitions from a module can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level and in calculator mode).
+                </p>
+            </article>
+            </section>
+            <section class="main-section" id="Errors_and_exceptions">
+                <header>Errors and exceptions</header>
+                <article>
+                <p>
+                    Until now error messages haven’t been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax errors and exceptions.
+                </p>
+                <ul>
+                    <li>
+                        <h4>Syntax Errors</h4>
+<pre>
+    >>> while True print('Hello world')
+      File "<stdin>", line 1
+        while True print('Hello world')
+                       ^
+    SyntaxError: invalid syntax</pre>
+                        <p>
+                            The parser repeats the offending line and displays a little ‘arrow’ pointing at the earliest point in the line where the error was detected. The error is caused by (or at least detected at) the token preceding the arrow: in the example, the error is detected at the function <code class="inline-code">print()</code>, since a colon <code class="inline-code">(':')</code> is missing before it. File name and line number are printed so you know where to look in case the input came from a script.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Exceptions</h4>
+                        <p>
+                            Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal: you will soon learn how to handle them in Python programs. Most exceptions are not handled by programs, however, and result in error messages.
+                        </p>
+                    </li>
+                </ul>
+            </article>
+            </section>
+            <section class="main-section" id="Classes">
+                <header>Classes</header>
+                <article>
+                <p>
+                    Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by its class) for modifying its state.
+                    <br><br>
+                    Compared with other programming languages, Python’s class mechanism adds classes with a minimum of new syntax and semantics. It is a mixture of the class mechanisms found in C++ and Modula-3. Python classes provide all the standard features of Object Oriented Programming: the class inheritance mechanism allows multiple base classes, a derived class can override any methods of its base class or classes, and a method can call the method of a base class with the same name. Objects can contain arbitrary amounts and kinds of data. As is true for modules, classes partake of the dynamic nature of Python: they are created at runtime, and can be modified further after creation.
+                    <br><br>
+                    In C++ terminology, normally class members (including the data members) are public (except see below Private Variables), and all member functions are virtual. As in Modula-3, there are no shorthands for referencing the object’s members from its methods: the method function is declared with an explicit first argument representing the object, which is provided implicitly by the call. As in Smalltalk, classes themselves are objects. This provides semantics for importing and renaming. Unlike C++ and Modula-3, built-in types can be used as base classes for extension by the user. Also, like in C++, most built-in operators with special syntax (arithmetic operators, subscripting etc.) can be redefined for class instances.
+                </p>
+            </article>
+            </section>
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <article>
+                <p>
+                    All the documentation in this page is taken from <a href="https://docs.python.org/3/tutorial/index.html" class="source-link">The Python Tutorial</a>
+                </p>
+            </article>
+            </section>
+        </main>
+    </body>
+
+</html>
